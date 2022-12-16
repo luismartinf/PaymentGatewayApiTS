@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">  
+    <div class="container-fluid">  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+            <ul class="nav navbar-nav">  
+                <li *ngIf="authService.isLoggedIn()"><a routerLink="/roles">Transactions</a></li>  
+                <li *ngIf="authService.isLoggedIn()"><a routerLink="/users">Transactions</a></li>  
+                <li *ngIf="!authService.isLoggedIn()"><a routerLink="/paymethods">Paymethods</a></li>
+                <li *ngIf="authService.isLoggedIn()"><a routerLink="/transactions">Transactions</a></li>  
+                <li *ngIf="!authService.isLoggedIn()"><a routerLink="/transfers">Paymethods</a></li>
+                <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>  
+            </ul>  
+        </div>  
+    </div>  
+  </nav>  
+<ul>  
+<p *ngIf="authService.isLoggedIn()">  
+        Welcome {{currentuser}}  
+</p>    
